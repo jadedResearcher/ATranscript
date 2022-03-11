@@ -25,18 +25,25 @@ body {
   position: absolute;
   left: 150px;
   bottom: 100%;
-  animation: scanline 10s linear infinite;
+  animation: scanline 3s linear infinite;
 }
 
 @keyframes scanline {
   0% {
     transform: translateY(0%);
+    opacity: 1;
   }
   80% {
-    transform: translateY(1000%);
+    transform: translateY(700%);
+  }
+
+  81% {
+    opacity: 0;
+    transform: translateY(700%);
   }
   100% {
-    transform: translateY(0%);
+    opacity: 0;
+    transform: translateY(700%);
   }
 }
 
@@ -47,7 +54,7 @@ body {
     rgba(0, 0, 0, 0.25) 50%
   );
   background-size: 1000px 8px;
-  height: 1000px;
+  height: 650px;
   width: 1200px;
   left: 150px;
   position: absolute;

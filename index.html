@@ -92,6 +92,8 @@
         const element = document.createElement("p");
         terminal.append(element);
         await typeWrite(terminal,element, line)
+        await sleep(speed*10);
+
       }
       killer(terminal)
     }
