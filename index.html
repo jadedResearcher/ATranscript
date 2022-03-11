@@ -1,0 +1,157 @@
+<html>
+
+<head>
+  <title>The Truth About Alt</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" href="alt.ico" />
+
+  <script>
+    //https://dev.to/ekeijl/retro-crt-terminal-screen-in-css-js-4afh
+    const clickAudio = new Audio("audio/web_SoundFX_254286__jagadamba__mechanical-switch.mp3");
+    let speed = 50;
+
+    const getRandomNumberBetween = (min, max) => {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    const pickFrom = (array) => {
+      return array[getRandomNumberBetween(0, array.length - 1)];
+    }
+
+    const sleep = (ms) => {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    const transcript = async () => {
+      const lines = [
+        "[BEGINNING RECORDING]",
+         "SPEAKER 1: What the hell do you mean you wanna merge 'em?",
+          "SPEAKER 2: You heard what I said, ________...",
+          "SPEAKER 1: Have you lost your mind? This kind of thing-- this doesn't happen! You can't just roll 'em over like it's nothing! What makes you think they would rather be a small fish in some other squeeze? You're Oliver fuckin' Twist showing up with your supper bowl!",
+          "[clack]",
+          "SPEAKER 1: See, this is what I mean. Y'think you're a wizkid, but there's no love a pappa can have for his boy that will get 'im to put his foot in his mouth for you. And that's a fat ass fuckin' foot you're lookin' to swallow.",
+          "SPEAKER 2: That's true.",
+          "[clack]",
+          "SPEAKER 2: Check.",
+          "[clack]",
+          "SPEAKER 1: Something tells me you ain't done.",
+          "SPEAKER 2: Of course I'm not.",
+          "SPEAKER 1: Okay, then. [snorts] What, you hired one of those snake-people that are showin' up now, to bind them up? 'Fraid I don't think they're into that.",
+          "[clack]",
+          "SPEAKER 2: You're gonna laugh.",
+          "SPEAKER 1: Cut the crap, ________... What is it?",
+          "SPEAKER 2: Got the killer on the payroll.",
+          "[clack]",
+          "SPEAKER 1: [in a half-whisper] So what if you got another guy? Like that's a problem, you fuckin' monkey. What, you plannin' to burst into their house with twenty or so fellas and start--",
+          "SPEAKER 2: I mean the Eye Killer.",
+          "[clack]",
+          "SPEAKER 1: The bitch that got caught?",
+          "SPEAKER 2: [sighs] That same one, yeah.",
+          "[clack]",
+          "SPEAKER 1: [still whispering, now aggressively] ________.., have you ACTUALLY gone fuckin' crazy? Point one still stands, but what's the first rule? You can't have a girl who's on national fuckin' television whack one of 'em and not have every single fuckin pig in the country stick their fuckin' head in! What's the fuckin' deal, huh? You want another RICO?",
+          "SPEAKER 2: There's not gonna be another RICO. No one is going to die. Sit your ass down and fuckin' listen to me, here.",
+          "[clack]",
+          "SPEAKER 1: ...alright.",
+          "SPEAKER 2: Good. You got a lighter?",
+          "SPEAKER 1: Thought y'didn't smoke.",
+          "SPEAKER 2: You thought wrong.",
+          "[clack]",
+          "SPEAKER 2: Let's start from the top. I've been talking to their kid. Fella tipped me off to his folks; good guy, terrible at his job. He's helping me set an arrangement with his folks. They know I'm going there, I know they're going there. We both get our friends to bring along, y'know, for clarity's sake. Two precious little rats in the nest.",
+          "SPEAKER 1: Ah. So whoever decides to get a little too friendly...",
+          "SPEAKER 2: Lets every other wiseguy in all of the States know that shit's going down. Once word's out, the others are going to smell blood in the water. Then we're both gone. [mumbling] We'd be damn lucky to just get caught.",
+          "SPEAKER 1: Okay, fine. Let's say that works. What's that girl meant to do in all of this?",
+          "SPEAKER 2: The guarantee that the word gets out if shit goes south. Besides, that murderer, she... has an interest. On both of us.",
+          "SPEAKER 1: You an' the don?",
+          "SPEAKER 2: No, the kid and I. Think she likes him more than me, frankly. Either way, even if I wanted to wet those sons of bitches, I don't think she'd take it very well. ",
+          "SPEAKER 1: Right. I mean, it sounds like this girl's more trouble than she's worth. We could just--",
+          "SPEAKER 2: Don't--!",
+          "SPEAKER 2: Say that. About her. Or anything. Aloud. Say it in your own house if you want, but don't say that shit near me.",
+          "SPEAKER 1: Ah. [laughs] Nearly got me there, thought it was serious. You went pale as a baby's bum, though, what's the catch? Check, by the way. ",
+          "[clack]",
+          "SPEAKER 2: It's not funny. Fucking... listen. I don't know what she is, but whatever she is, she isn't human. You've seen the trial, you've seen her change. And that monster, demon, whatever you want to call it-- any other man in the garbage biz can be bought. You know that. Everyone's kicking up to someone. Her? She's fucking unshakeable, that's the one thing I can guarantee you. She wants us. The moment any of us even think about fucking with her, we're dead. But. But... if we get her to work with us, it would change... everything.",
+          "[clack]",
+          "SPEAKER 1: Hey, now, you know I'm no fucking rat, but you have to know that what you're saying sounds crazy, right? Even if it works, what the fuck does any of that mean? I'd take a bullet for you, but it sounds more like you're trying to curse me, or someshit. I can't be a part of that.",
+          "SPEAKER 2: Fine, then.",
+          "[clack]",
+          "SPEAKER 2: So what are you going to do?",
+          "SPEAKER 1: I'm... you're not slidin' this one past the Don.",
+          "SPEAKER 2: [wryly] So much for not being a rat.",
+          "SPEAKER 1: I'm in here like everyone else to make some fuckin' money, not to sell my soul or whatever the fuck you're plannin'!",
+          "SPEAKER 2: [sigh] I like you, you know? You're a good man. So I'm giving you five seconds to reconsider, ________. Plenty of time to think about where you stand in all this.",
+          "SPEAKER 1: At least look at me in the eye when you're threatenin' me, asshole.",
+          "SPEAKER 2: Five...",
+          "SPEAKER 1: What the fuck are you lookin' at?",
+          "SPEAKER 2: Four...",
+          "SPEAKER 1: You fuckin'-- I'm leaving!",
+          "SPEAKER 2: Three...",
+          "SPEAKER 2: Two...",
+        ];
+      const terminal = document.querySelector("#terminal");
+      terminal.innerHTML = "";
+      for(let line of lines){
+        const element = document.createElement("p");
+        terminal.append(element);
+        await typeWrite(terminal,element, line)
+      }
+      killer(terminal)
+    }
+
+    const killer = (parent)=>{
+      const element = document.createElement("p");
+      element.classList.add("killer")
+      element.innerHTML = "[One]"
+      parent.append(element);
+
+    }
+
+    const typeWrite = async(scroll_element, element,text) => {
+      if(text.charAt(0)=="["){
+        element.innerHTML=text;
+        scroll_element.scrollTop = scroll_element.scrollHeight;
+        await sleep(speed* 10);
+        return;
+      }
+      console.log("JR NOTE: first char is", text.charAt[0], "speed is", speed);
+      for(let i = 0; i< text.length; i++){
+        await sleep(speed);
+        clickAudio.play();
+        element.innerHTML += text.charAt(i);
+        scroll_element.scrollTop = scroll_element.scrollHeight;
+      }
+    }
+
+    const play = () => {
+      transcript();
+    }
+
+
+    window.onload = () => {
+      window.onclick = () => {
+        clickAudio.play();
+      }
+
+      window.onmousedown = ()=>{
+          speed = 0;
+      }
+      window.onmouseup = ()=>{
+        speed = 50;
+      }
+    }
+  </script>
+
+
+</head>
+
+<body>
+  <div id="crt">
+    <div class="scanline"></div>
+    <div class="lines"></div>
+
+    <div id="terminal">
+      <button onClick="play()">Click To Play Transcript</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
